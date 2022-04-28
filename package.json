@@ -1,0 +1,11 @@
+{
+  "name": "smartbelt-http-server",
+  "version": "1.0.0",
+  "description": "HTTP server for smartbelt",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Xavier Garcia Clavero",
+  "license": "ISC"
+}
