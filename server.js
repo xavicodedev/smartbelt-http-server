@@ -10,7 +10,7 @@ function(request,response){
     else if(request.method == "POST")
         {
             //response.send("received POST request.");
-            response.end(JSON.stringify({ postData: request.body.postData }));
+            response.end(request.body);
         }
     else
         {
