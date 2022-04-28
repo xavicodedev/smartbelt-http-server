@@ -1,20 +1,30 @@
 var http = require('http');
-var server = http.createServer ( function(request,response){
+var server = http.createServer ( 
+    
+function(request,response){
+    response.writeHead(200,{"Content-Type":"application/json"});
+    if(request.method == "GET")
+        {
+            response.end("received GET request.")
+        }
+    else if(request.method == "POST")
+        {
+            //response.send("received POST request.");
+            response.end(JSON.stringify({ postData: request.body.postData }));
+        }
+    else
+        {
+            response.end("Undefined request .");
+        }
 
-response.writeHead(200,{"Content-Type":"text\plain"});
-if(request.method == "GET")
-    {
-        response.end("received GET request.")
-    }
-else if(request.method == "POST")
-    {
-        response.end("received POST request.");
-    }
-else
-    {
-        response.end("Undefined request .");
-    }
-});
+    
+}
+
+
+
+
+
+);
 
 server.listen(process.env.PORT || 5000)
 console.log("Server running...");
