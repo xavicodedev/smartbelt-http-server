@@ -11,6 +11,7 @@ function(request,response){
         {
             //response.send("received POST request.");
             response.end(request.body);
+            console.log(request.body);
         }
     else
         {
